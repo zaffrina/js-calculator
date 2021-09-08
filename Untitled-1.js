@@ -1,4 +1,3 @@
-
 //Просим данные у пользователя + обявляем переменные и объект
 let money = prompt("Ваш бюджет на месяц?")
     time = prompt("Введите дату в формате YYYY-MM-DD");
@@ -20,5 +19,4 @@ let userIn = prompt("Введите обязательную статью рас
  appData.expenses.userIn1 = userIn3;
  alert("Ваш бюджет на день");
  alert(appData.budjet/30);
-
 
