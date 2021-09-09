@@ -10,7 +10,7 @@ let appData = {
     optionalExpenses : {},
     income : [],
     savings: false,
-    moneyPerDay
+    moneyPerDay : money
 };
 
 for (let i = 0; i < 2; i++)
@@ -24,10 +24,43 @@ for (let i = 0; i < 2; i++)
         appData.expenses[userIn] = userIn2;
     }
     else {
-
+        break;
     }
     
 }
+    /* Первый вид цикла с предусловием 
+let i = 0;
+ while (i < 2)
+{   i++;
+    let userIn = prompt("Введите обязательную статью расходов в этом месяце")
+    let userIn2 = prompt("Во сколько обойдется?");
+
+    if ( typeof(userIn) === 'string' && (typeof(userIn)) != null && (typeof(userIn2)) != null
+    && userIn != ''&& userIn2 != '' && userIn.length < 50  )
+    {
+        appData.expenses[userIn] = userIn2;
+    }
+    else {
+        break;
+    }
+    Второй вид цикла с постусловием
+   do
+    { i++;
+    let userIn = prompt("Введите обязательную статью расходов в этом месяце")
+    let userIn2 = prompt("Во сколько обойдется?");
+
+    if ( typeof(userIn) === 'string' && (typeof(userIn)) != null && (typeof(userIn2)) != null
+    && userIn != ''&& userIn2 != '' && userIn.length < 50  )
+    {
+        appData.expenses[userIn] = userIn2;
+    }
+    else {
+        break;
+    }  
+    while (i < 2);
+
+*/
+
 
 // Выводим бюджет
 appData.moneyPerDay = appData.budjet/30;
