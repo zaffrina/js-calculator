@@ -20,6 +20,7 @@ let appData = {
     income : [],
     savings: true,
     moneyPerDay : money
+
 };
 //Функция обязательных расходов
 function chooseOptExpenses () {
@@ -78,10 +79,10 @@ function checkSaving () {
 checkSaving();
 //Функция для необязательных расходов
 function chooseOptExpenses () {
-    for (let i = 0; i < 3; i++)
+    for (let i = 1; i < 3; i++)
     {
        let userIn = prompt("Статья необязательных расходов?")
-           appData.optionalExpenses[i+1] = userIn; // тут i+1 для красивой записи т.к. в начале цикла i=0
+           appData.optionalExpenses[i] = userIn; 
            alert("Начисления: " +appData.optionalExpenses);
        }
 
