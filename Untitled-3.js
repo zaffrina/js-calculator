@@ -1,5 +1,5 @@
 
-//Просим данные у пользователя + обявляем переменные и объект
+//Переменые и стартовая функция с бюджетом
 let money,time;
 function start ( ) {
     money = +prompt("Ваш бюджет на месяц?");
@@ -18,12 +18,13 @@ let appData = {
     expenses :  {},
     optionalExpenses : {},
     income : [],
-    savings: false,
+    savings: true,
     moneyPerDay : money
 };
+//Функция обязательных расходов
 function chooseOptExpenses () {
     for (let i = 0; i < 2; i++)
-{
+ {
     let userIn = prompt("Введите обязательную статью расходов в этом месяце")
     let userIn2 = prompt("Во сколько обойдется?");
 
@@ -38,25 +39,52 @@ function chooseOptExpenses () {
     
 }
 }
+
 chooseOptExpenses ();
 
-    
-// Выводим бюджет
+// Функция вывода и посчета бюджета
+ function detectDayBudget ()
+ {
 appData.moneyPerDay = (appData.budjet/30).toFixed();
  alert("Ваш бюджет на день " + appData.moneyPerDay);
-
+ }
+ // Функция с расчетом уровня достатка
+ function detectLevel() {
  if (appData.moneyPerDay < 100) {
-console.log("Минимальный уровень достатка");
-}
-else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000 ){
+ console.log("Минимальный уровень достатка");
+ }
+ else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000 ){
     console.log("Средний уровень достатка");
-}
-else if (appData.moneyPerDay < 2000 ){
+ }
+ else if (appData.moneyPerDay < 2000 ){
     console.log("Высокий уровень достатка");
-} 
-else {
+ } 
+ else {
     console.log("Ошибка");
+ }
 }
+// Функция накоплений
+function checkSaving () {
+    if (appData.savings = true)
+    {
+       let save = +prompt("Какова сумма накоплений?"),
+       percent = +prompt("Под какой процент?");
+       appData.mothIncome = save/100/12*percent;
+       alert("Начисления: " +appData.mothIncome);
 
+
+    }
+}
+checkSaving();
+//Функция для необязательных расходов
+function chooseOptExpenses () {
+    for (let i = 0; i < 3; i++)
+    {
+       let userIn = prompt("Статья необязательных расходов?")
+           appData.optionalExpenses[i+1] = userIn; // тут i+1 для красивой записи т.к. в начале цикла i=0
+           alert("Начисления: " +appData.optionalExpenses);
+       }
+
+}
 
  
