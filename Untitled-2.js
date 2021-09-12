@@ -24,7 +24,7 @@ for (let i = 0; i < 2; i++)
         appData.expenses[userIn] = userIn2;
     }
     else {
-        break;
+        i=i-1;
     }
     
 }
@@ -41,7 +41,7 @@ let i = 0;
         appData.expenses[userIn] = userIn2;
     }
     else {
-        break;
+         i=i-1;
     }
     Второй вид цикла с постусловием
    do
@@ -55,12 +55,11 @@ let i = 0;
         appData.expenses[userIn] = userIn2;
     }
     else {
-        break;
+         i=i-1;
     }  
     while (i < 2);
 
 */
-
 
 // Выводим бюджет
 appData.moneyPerDay = appData.budjet/30;
