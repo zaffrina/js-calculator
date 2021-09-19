@@ -10,7 +10,7 @@ function start ( ) {
 
     }
 }
-start ( );
+start ();
 
 let appData = {
     budjet : money,
@@ -23,7 +23,7 @@ let appData = {
 
 };
 //Функция обязательных расходов
-function chooseOptExpenses () {
+function chooseExpenses () {
     for (let i = 0; i < 2; i++)
  {
     let userIn = prompt("Введите обязательную статью расходов в этом месяце")
@@ -41,7 +41,7 @@ function chooseOptExpenses () {
 }
 }
 
-chooseOptExpenses ();
+chooseExpenses ();
 
 // Функция вывода и посчета бюджета
  function detectDayBudget ()
@@ -77,6 +77,7 @@ function checkSaving () {
     }
 }
 checkSaving();
+chooseOptExpenses ();
 //Функция для необязательных расходов
 function chooseOptExpenses () {
     for (let i = 1; i < 3; i++)
