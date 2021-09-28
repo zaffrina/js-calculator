@@ -21,7 +21,7 @@ let appData = {
     chooseExpenses: function () {
         for (let i = 0; i < 2; i++) {
             let userIn = prompt("Введите обязательную статью расходов в этом месяце")
-            let userIn2 = prompt("Во сколько обойдется?");
+            let userIn2=prompt("Во сколько обойдется?");
 
             if (typeof (userIn) === 'string' && (typeof (userIn)) != null && (typeof (userIn2)) != null &&
                 userIn != '' && userIn2 != '' && userIn.length < 50) {
@@ -53,7 +53,7 @@ let appData = {
         for (let i = 1; i < 3; i++) {
             let userIn = prompt("Статья необязательных расходов?")
             appData.optionalExpenses[i] = userIn;
-            alert("Статья необязательных расходов: " + appData.optionalExpenses);
+            alert("Начисления: " + appData.optionalExpenses);
         }
 
     },
@@ -84,3 +84,8 @@ let appData = {
 }
 //Что значит () после названия функции?
 // Аргументы(переменые/выражения) которые она принимает. 
+
+
+
+
+ 
