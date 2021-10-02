@@ -13,7 +13,7 @@ function one() {
     }
 
     function objwrit(student) {
-        console.log(student.name+" "+student.fam+"."+age+"лет.Интересы: "+student.Interes+"Учится в "+student.uni);
+        console.log(student.name+" "+student.fam+"."+student.age+"лет.Интересы: "+student.Interes+".Учится в "+student.uni);
     }
     alert('Вывод в консоли');
     objwrit(student);
