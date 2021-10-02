@@ -42,10 +42,20 @@ function two() {
 хранится массив чисел, которые уже были сгенерированы функцией.
 */
 function three() {
-   
-
+    alert('Вывод в консоли');
+    gen();
 }
-
+function gen(){
+    let numb = [];
+    return function () {
+            let num = Math.floor(Math.random() * 100) + 1;
+            if (numb.indexOf(num) < 0) {
+                numb.push(num)
+            }
+            console.log(num);
+        }
+        ();
+}
 
 
 let i = 0;
