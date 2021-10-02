@@ -3,12 +3,24 @@ let money, time;
 
 function start() {
     money = +prompt("Ваш бюджет на месяц?");
-    time = prompt("Введите дату в формате YYYY-MM-DD");
+    let age, day, mes;
+  //  while (time === undefined) {
+        age = +prompt("Введите год");
+        if (Number.isInteger(age)) {
+            mes = prompt("Введите месяц");
+            if (Number.isInteger(mes) || mes > 0 || mes < 13) {
+                day = prompt("Введите день");
+                if (Number.isInteger(day) || day > 0 || day < 32){
+                    alert("Дата введена");
+                    time=age+"-"+mes+"-"+day;
+                }else alert("Неверно введен день!");
+            } else alert("Неверно введен месяц!");
+        } else alert("Неверно введен год!");
+    }
     while (isNaN(money) || money == "" || money == null) {
         money = +prompt("Ваш бюджет на месяц?");
-
     }
-}
+//}
 start();
 let appData = {
     budjet: money,
@@ -24,7 +36,7 @@ let appData = {
             let userIn2 = prompt("Во сколько обойдется?");
 
             if (typeof (userIn) === 'string' && (typeof (userIn)) != null && (typeof (userIn2)) != null &&
-                userIn != '' && userIn2 != '' && userIn.length < 50) {
+                userIn != '' && userIn2 != '' && userIn.length < 50 && userIn2 < appData.budjet) {
                 appData.expenses[userIn] = userIn2;
             } else {
                 i = i - 1;
@@ -51,6 +63,7 @@ let appData = {
     //Функция для необязательных расходов
     chooseOptExpenses: function () {
         for (let i = 1; i < 3; i++) {
+
             let userIn = prompt("Статья необязательных расходов?")
             appData.optionalExpenses[i] = userIn;
             alert("Статья необязательных расходов: " + appData.optionalExpenses);
