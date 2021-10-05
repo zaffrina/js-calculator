@@ -2,26 +2,25 @@
 let money, time;
 
 function start() {
-    money = +prompt("Ваш бюджет на месяц?");
     let age, day, mes;
-  //  while (time === undefined) {
-        age = +prompt("Введите год");
-        if (Number.isInteger(age)) {
-            mes = prompt("Введите месяц");
-            if (Number.isInteger(mes) || mes > 0 || mes < 13) {
-                day = prompt("Введите день");
-                if (Number.isInteger(day) || day > 0 || day < 32){
-                    alert("Дата введена");
-                    time=age+"-"+mes+"-"+day;
-                }else alert("Неверно введен день!");
-            } else alert("Неверно введен месяц!");
-        } else alert("Неверно введен год!");
-    }
-    while (isNaN(money) || money == "" || money == null) {
-        money = +prompt("Ваш бюджет на месяц?");
-    }
-//}
-start();
+     while (time === undefined) {
+    age = +prompt("Введите год");
+    if (Number.isInteger(age) && age == "" && age == null) {
+        mes = prompt("Введите месяц");
+        if (Number.isInteger(mes) && mes > 0 && mes < 13 && day == "" && day == null) {
+            day = prompt("Введите день");
+            if (Number.isInteger(day) && day > 0 && day < 32 && day == "" && day == null) {
+                alert("Дата введена");
+                time = age + "-" + mes + "-" + day;
+            } else alert("Неверно введен день!");
+        } else alert("Неверно введен месяц!");
+    } else alert("Неверно введен год!");
+}
+while (isNaN(money) || money == "" || money == null) {
+    money = +prompt("Ваш бюджет на месяц?");
+}
+}
+//start();
 let appData = {
     budjet: money,
     timeData: time,
@@ -92,8 +91,23 @@ let appData = {
 
 
         }
+    },
+    chooseIncome: function () {
+        let items;
+        while (typeof (items) === !'string' || items == "" || items == null) {
+            items = prompt("Что принесет дополнительный доход?(Через запятую!)");
+            appData.income = items.split(",");
+        }
+        appData.income.push(prompt("Что-то еще?"));
+        appData.income.sort();
+        appData.income.forEach(element => console.log( "Способы доп. заработка: "+element));
+
     }
 
-}
-//Что значит () после названия функции?
-// Аргументы(переменые/выражения) которые она принимает. 
+};
+appData.chooseIncome();
+for (let i in appData) {
+    console.log("Наша программа включает в себя данные: "+appData[i]);
+  }
+// Как перебрать свойства обьекта?
+// Циклом for..in
